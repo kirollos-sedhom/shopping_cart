@@ -1,12 +1,31 @@
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import Layout from "./components/Layout";
 
-import './App.css'
+/*
+todo:
+homepage will have a nice navbar at the top, containing two routes. home and cart.
+the home will contain data fetched from API
+the data is just some products. every product in its card. the card should have the product image, name, and add to cart button
+
+* when you visit the cart route, you should see all your cart items, their price, and a remove from cart button
+  on the right there should be the calculated price of all products
+
+*/
 
 function App() {
   return (
-    <>
-      <h1 className='text-red-500'>hello world</h1>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
