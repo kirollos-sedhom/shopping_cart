@@ -1,1 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-family: 'Festina Lente';
+  src: url('/fonts/festina_lente.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.font-festina{
+    font-family: 'Festina Lente';
+}
+
+.font-instrument{
+    font-family: "Instrument Sans", sans-serif;
+}
