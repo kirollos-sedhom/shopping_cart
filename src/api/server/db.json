@@ -1,0 +1,59 @@
+{  "products": [
+    {
+      "id": 1,
+      "title": "gray sweater",
+      "price": 19.99,
+      "description": "100% cotton, unisex fit, soft and breathable.",
+      "category": "sweaters",
+      "images": ["https://images.unsplash.com/photo-1648249538529-2a24d088ca11?q=80&w=654&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1648249988677-75a62c4f3ea9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D"],
+      "source": "https://unsplash.com/photos/a-man-wearing-a-red-hat-and-a-gray-shirt-uvNEuFDkgbE"
+    },
+    {
+      "id": 2,
+      "title": "black T-shirt",
+      "price": 49.99,
+      "description": "Oversized blue denim jacket, perfect for layering.",
+      "category": "T-shirts",
+      "images": ["https://images.unsplash.com/photo-1749711258545-2bd4e5a2622f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1749711258583-c14f91949ab6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"],
+      "source": "https://unsplash.com/photos/man-wearing-a-black-polo-shirt-and-sunglasses-MF-LklDrX4Q"
+    },
+    {
+      "id": 3,
+      "title": "black T-shirt",
+      "price": 49.99,
+      "description": "Oversized blue denim jacket, perfect for layering.",
+      "category": "T-shirts",
+      "images": ["https://images.unsplash.com/photo-1666358086779-c9fadf0b52bc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1666358086975-a98c4c908603?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"],
+      "source": "https://unsplash.com/photos/a-man-with-his-hands-folded-adaUnlyVLts"
+    },
+    {
+      "id": 4,
+      "title": "light blue jeans",
+      "price": 49.99,
+      "description": "Oversized blue denim jacket, perfect for layering.",
+      "category": "Jeans",
+      "images": ["https://plus.unsplash.com/premium_photo-1690820317364-3e22c2f68eb4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D", "https://plus.unsplash.com/premium_photo-1690820318456-ac6430633d6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"],
+      "source": "https://unsplash.com/photos/a-woman-in-a-black-t-shirt-and-light-blue-jeans-K4Ty4UZ2vN8"
+    },
+    {
+      "id": 5,
+      "title": "denim outfit",
+      "price": 49.99,
+      "description": "Oversized blue denim jacket, perfect for layering.",
+      "category": "T-shirts",
+      "images": ["https://plus.unsplash.com/premium_photo-1727943024937-890233244a7f?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://plus.unsplash.com/premium_photo-1727943024952-1876cd7ffa07?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"],
+      "source": "https://unsplash.com/photos/a-woman-in-overalls-is-posing-for-a-picture-rngyEfEkgBY"
+    },
+    {
+      "id": 6,
+      "title": "white hoodie",
+      "price": 49.99,
+      "description": "Oversized blue denim jacket, perfect for layering.",
+      "category": "T-shirts",
+      "images": ["https://plus.unsplash.com/premium_photo-1727967191716-af010c1ac13b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://plus.unsplash.com/premium_photo-1727967193628-81cc573e74fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"],
+      "source": ""
+    }
+   
+]
+}
+

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../index.css";
+import { Link } from "react-router";
 type Props = {
   id: number;
   images: string[];
@@ -17,32 +18,43 @@ export default function Product({ id, images, price, title }: Props) {
   const [discountedPrice] = useState(0.9 * price);
 
   return (
-    <div
-      // onMouseOver={() => setDisplayedImage(2)}
-      // onMouseOut={() => setDisplayedImage(0)}
-      className="bg-white rounded-lg ring ring-teal-900 hover:shadow-lg transition w-full max-w-sm mx-auto overflow-hidden"
-    >
-      <div className="overflow-hidden">
-        <img
-          src={images[0]}
-          alt={title}
-          className="hover:scale-110 duration-500 ease-in-out"
-        />
-      </div>
+    <Link to={`/products/${id}`}>
+      <div
+        onMouseOver={() => setDisplayedImage(1)}
+        onMouseOut={() => setDisplayedImage(0)}
+        className="bg-white rounded-lg ring ring-teal-900 hover:shadow-lg transition w-full max-w-sm mx-auto overflow-hidden cursor-pointer"
+      >
+        <div className="h-72 w-full overflow-hidden relative">
+          <img
+            src={images[0]}
+            alt={title}
+            className={`absolute top-0 left-0 w-full h-full object-cover object-[center_20%] transition-opacity duration-500 ${
+              displayedImage === 0 ? "opacity-100" : "opacity-0"
+            }`}
+          />
+          <img
+            src={images[1]}
+            alt={title}
+            className={`absolute top-0 left-0 w-full h-full object-cover object-[center_20%] transition-opacity duration-500 ${
+              displayedImage === 1 ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        </div>
 
-      <div className="p-4 flex flex-col gap-2">
-        <p className="font-festina">{title}</p>
-        <p className="font-instrument">
-          {clothingDescriptions[randomDescription]}
-        </p>
-        <div className="font-instrument flex gap-4 items-center">
-          <p className="text-lg">$ {discountedPrice}</p>
-          <p>
-            <del className="text-slate-900/50 text-sm">$ {price}</del>
+        <div className="p-4 flex flex-col gap-2">
+          <p className="font-festina">{title}</p>
+          <p className="font-instrument">
+            {clothingDescriptions[randomDescription]}
           </p>
+          <div className="font-instrument flex gap-4 items-center">
+            <p className="text-lg">$ {discountedPrice}</p>
+            <p>
+              <del className="text-slate-900/50 text-sm">$ {price}</del>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 const clothingDescriptions = [

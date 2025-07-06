@@ -2,21 +2,16 @@ import React, { useEffect, useState } from "react";
 import Product from "./Product/Product";
 /*
 
-✅ Day 2: Product Listing Page
-Goal: Create the product list page with static or dummy data.
+✅ Day 3: Product Details Page + Routing
+Goal: View product details on a new route.
 
-Build ProductCard component
+Use useParams() from React Router to fetch product ID
 
-Map over 4–6 dummy products and render them
+Show more details (price, description, image, etc.)
 
-Style with Tailwind (hover effects, grid layout, etc.)
+"Add to Cart" button
 
-Deliverable: Homepage shows grid of clothes/products.
-[GET] https://api.escuelajs.co/api/v1/categories/1/products
-
-
-fonts: festina lente
-instrumentsans
+Deliverable: Clicking on a product shows a detailed view.
 */
 type ClothingItem = {
   id: number;
@@ -34,15 +29,7 @@ export default function Home() {
     async function fetchAll() {
       setIsLoading(true);
       try {
-        const categoryRes = await fetch(
-          "https://api.escuelajs.co/api/v1/categories/slug/clothes"
-        );
-        const categoryJson = await categoryRes.json();
-        const categoryId = categoryJson.id;
-
-        const productRes = await fetch(
-          `https://api.escuelajs.co/api/v1/categories/${categoryId}/products`
-        );
+        const productRes = await fetch(`http://localhost:4000/products`);
         const productJson = await productRes.json();
         console.log(productJson);
 

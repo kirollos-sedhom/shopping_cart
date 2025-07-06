@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
 import Layout from "./components/Layout";
+import ProductDetails from "./components/Product/ProductDetails";
 
 /*
 todo:
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
