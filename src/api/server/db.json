@@ -1,59 +1,88 @@
-{  "products": [
+{
+  "products": [
     {
       "id": 1,
       "title": "gray sweater",
       "price": 19.99,
-      "description": "100% cotton, unisex fit, soft and breathable.",
+      "discount": 10,
+      "description": "Laid-back luxury in soft cotton.",
+      "detailedDescription": "This gray sweater wraps you in understated charm. Crafted from 100% breathable cotton, it balances cozy comfort with modern design. Its unisex cut flatters every frame, while the neutral tone makes it easy to pair with anything from sharp trousers to worn-in denim. Weekend-ready, office-approved—style it your way.",
       "category": "sweaters",
-      "images": ["https://images.unsplash.com/photo-1648249538529-2a24d088ca11?q=80&w=654&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1648249988677-75a62c4f3ea9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D"],
+      "images": [
+        "https://images.unsplash.com/photo-1648249538529-2a24d088ca11?q=80&w=654&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1648249988677-75a62c4f3ea9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D"
+      ],
       "source": "https://unsplash.com/photos/a-man-wearing-a-red-hat-and-a-gray-shirt-uvNEuFDkgbE"
     },
     {
       "id": 2,
       "title": "black T-shirt",
       "price": 49.99,
-      "description": "Oversized blue denim jacket, perfect for layering.",
+      "discount": 10,
+      "description": "Effortlessly bold. Always black.",
+      "detailedDescription": "This oversized black tee is your new go-to for effortless cool. Designed with a relaxed silhouette and soft cotton touch, it offers both edge and ease. Whether you're layering it under a jacket or letting it speak for itself, this tee keeps it simple—and striking. Wear it loud without saying a word.",
       "category": "T-shirts",
-      "images": ["https://images.unsplash.com/photo-1749711258545-2bd4e5a2622f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1749711258583-c14f91949ab6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"],
+      "images": [
+        "https://images.unsplash.com/photo-1749711258545-2bd4e5a2622f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1749711258583-c14f91949ab6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
+      ],
       "source": "https://unsplash.com/photos/man-wearing-a-black-polo-shirt-and-sunglasses-MF-LklDrX4Q"
     },
     {
       "id": 3,
       "title": "black T-shirt",
       "price": 49.99,
-      "description": "Oversized blue denim jacket, perfect for layering.",
+      "discount": 10,
+      "description": "Relaxed fit. Refined attitude.",
+      "detailedDescription": "Made for movement and made to last, this black tee brings form and function into harmony. The oversized fit gives it modern flair, while the clean lines keep things versatile. It's soft, strong, and made to travel with you—whether that’s to the studio, the café, or anywhere in between.",
       "category": "T-shirts",
-      "images": ["https://images.unsplash.com/photo-1666358086779-c9fadf0b52bc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://images.unsplash.com/photo-1666358086975-a98c4c908603?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"],
+      "images": [
+        "https://images.unsplash.com/photo-1666358086779-c9fadf0b52bc?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1666358086975-a98c4c908603?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"
+      ],
       "source": "https://unsplash.com/photos/a-man-with-his-hands-folded-adaUnlyVLts"
     },
     {
       "id": 4,
       "title": "light blue jeans",
       "price": 49.99,
-      "description": "Oversized blue denim jacket, perfect for layering.",
+      "discount": 10,
+      "description": "Denim done right.",
+      "detailedDescription": "These light blue jeans are the perfect blend of ease and attitude. With a flattering high-rise and a relaxed, tapered leg, they offer just the right amount of vintage vibe. Durable and breathable, they mold to your movement while keeping your look grounded. Trust us—these jeans pull everything together.",
       "category": "Jeans",
-      "images": ["https://plus.unsplash.com/premium_photo-1690820317364-3e22c2f68eb4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D", "https://plus.unsplash.com/premium_photo-1690820318456-ac6430633d6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"],
+      "images": [
+        "https://plus.unsplash.com/premium_photo-1690820317364-3e22c2f68eb4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D",
+        "https://plus.unsplash.com/premium_photo-1690820318456-ac6430633d6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
+      ],
       "source": "https://unsplash.com/photos/a-woman-in-a-black-t-shirt-and-light-blue-jeans-K4Ty4UZ2vN8"
     },
     {
       "id": 5,
       "title": "denim outfit",
       "price": 49.99,
-      "description": "Oversized blue denim jacket, perfect for layering.",
+      "discount": 10,
+      "description": "A double dose of denim cool.",
+      "detailedDescription": "Own the moment in this matching denim set, made for confidence and creativity. The oversized jacket pairs with relaxed-fit jeans for a bold silhouette that’s both timeless and on-trend. It’s casual, it’s classic, and it makes a statement. Break the rules—or redefine them entirely.",
       "category": "T-shirts",
-      "images": ["https://plus.unsplash.com/premium_photo-1727943024937-890233244a7f?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://plus.unsplash.com/premium_photo-1727943024952-1876cd7ffa07?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"],
+      "images": [
+        "https://plus.unsplash.com/premium_photo-1727943024937-890233244a7f?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1727943024952-1876cd7ffa07?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8fHw%3D"
+      ],
       "source": "https://unsplash.com/photos/a-woman-in-overalls-is-posing-for-a-picture-rngyEfEkgBY"
     },
     {
       "id": 6,
       "title": "white hoodie",
       "price": 49.99,
-      "description": "Oversized blue denim jacket, perfect for layering.",
+      "discount": 10,
+      "description": "Cloud-soft. Street-ready.",
+      "detailedDescription": "This oversized white hoodie brings warmth without the weight. With a plush fleece interior and relaxed fit, it’s your perfect layer for chilly mornings or laid-back nights. The clean colorway and roomy hood give it that off-duty model vibe—cozy, cool, and made to move with you.",
       "category": "T-shirts",
-      "images": ["https://plus.unsplash.com/premium_photo-1727967191716-af010c1ac13b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D","https://plus.unsplash.com/premium_photo-1727967193628-81cc573e74fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"],
+      "images": [
+        "https://plus.unsplash.com/premium_photo-1727967191716-af010c1ac13b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1727967193628-81cc573e74fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
+      ],
       "source": ""
     }
-   
-]
+  ]
 }
-

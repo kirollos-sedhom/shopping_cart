@@ -8,12 +8,18 @@ type Props = {
   description: string;
   title: string;
 };
-export default function Product({ id, images, price, title }: Props) {
+export default function Product({
+  id,
+  images,
+  price,
+  title,
+  description,
+}: Props) {
   const [displayedImage, setDisplayedImage] = useState(0);
 
-  const [randomDescription] = useState(() =>
-    Math.floor(Math.random() * clothingDescriptions.length)
-  );
+  // const [randomDescription] = useState(() =>
+  //   Math.floor(Math.random() * clothingDescriptions.length)
+  // );
 
   const [discountedPrice] = useState(0.9 * price);
 
@@ -43,9 +49,7 @@ export default function Product({ id, images, price, title }: Props) {
 
         <div className="p-4 flex flex-col gap-2">
           <p className="font-festina">{title}</p>
-          <p className="font-instrument">
-            {clothingDescriptions[randomDescription]}
-          </p>
+          <p className="font-instrument">{description}</p>
           <div className="font-instrument flex gap-4 items-center">
             <p className="text-lg">$ {discountedPrice}</p>
             <p>
