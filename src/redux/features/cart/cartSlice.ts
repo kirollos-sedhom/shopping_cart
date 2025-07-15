@@ -5,10 +5,12 @@ type CartItem = ProductType & { quantity: number };
 
 type CartState = {
   items: CartItem[];
+  subtotal: number;
 };
 
 const initialState: CartState = {
   items: [],
+  subtotal: 0,
 };
 
 const cartSlice = createSlice({
@@ -25,6 +27,7 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
+      state.subtotal += action.payload.price;
       // this should be of type product
     },
   },

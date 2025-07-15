@@ -92,3 +92,33 @@ Push to GitHub
 Deploy to Vercel or Netlify
 
 Write a clean README: features, tools used, how to run
+
+📌 Phase 1: Finalize Redux Toolkit Integration
+Store product data (fetched from API or dummy for now)
+
+Add to cart / remove from cart
+
+Persist cart state (optional: localStorage)
+
+Show total price in /cart
+
+Handle product details (/products/:id)
+
+Use slices, selectors, good structure
+
+If you finish this and can look at your code thinking “This is clean and scalable” — you're 💯 ready to move on.
+
+📌 Phase 2: Start Supabase Integration
+Here’s what you’ll be doing in that phase:
+
+Set up a Supabase project + products table
+
+Move product fetching to Supabase
+
+Set up Supabase Auth (email/password)
+
+Create login & register pages
+
+Store logged-in user in Redux (or React Context)
+
+Protect the /cart route
