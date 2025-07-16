@@ -1,4 +1,4 @@
-✅ Day 1: Setup + Design
+<!-- ✅ Day 1: Setup + Design
 Goal: Pick the UI and set up your React project with Tailwind.
 
 Choose a design from Tailwind UI, Tailwind-Kit, or Dribbble (limit to 30–60 mins).
@@ -7,8 +7,8 @@ Initialize project (Vite + React + Tailwind + Redux Toolkit)
 
 Setup file structure and routes (React Router)
 
-Deliverable: Project initialized with working homepage and navigation structure.
-
+Deliverable: Project initialized with working homepage and navigation structure. -->
+<!--
 ✅ Day 2: Product Listing Page
 Goal: Create the product list page with static or dummy data.
 
@@ -18,9 +18,9 @@ Map over 4–6 dummy products and render them
 
 Style with Tailwind (hover effects, grid layout, etc.)
 
-Deliverable: Homepage shows grid of clothes/products.
+Deliverable: Homepage shows grid of clothes/products.  -->
 
-✅ Day 3: Product Details Page + Routing
+<!-- ✅ Day 3: Product Details Page + Routing
 Goal: View product details on a new route.
 
 Use useParams() from React Router to fetch product ID
@@ -29,18 +29,18 @@ Show more details (price, description, image, etc.)
 
 "Add to Cart" button
 
-Deliverable: Clicking on a product shows a detailed view.
+Deliverable: Clicking on a product shows a detailed view. -->
 
-✅ Day 4: Cart Page + Redux Setup
+<!-- ✅ Day 4: Cart Page + Redux Setup
 Goal: Build a working cart with Redux Toolkit
 
-Create cartSlice.js (add/remove logic)
+Create cartSlice.js (add/remove logic) ✅✅
 
-Add to Cart from Product Details
+Add to Cart from Product Details ✅✅
 
-Create Cart Page — show products in cart
+Create Cart Page — show products in cart ✅✅
 
-Deliverable: Items are added and displayed in cart via Redux state.
+Deliverable: Items are added and displayed in cart via Redux state. -->
 
 ✅ Day 5: Local Storage + Quantity
 Goal: Make the cart state persist + add quantity controls.
@@ -52,6 +52,60 @@ Add "Increase/Decrease quantity" buttons
 Show total price calculation
 
 Deliverable: Cart behaves like a real cart.
+
+مرحلة انتقالية
+
+<!--  -->
+
+Supabase Integration Readiness Checklist
+🧱 1. Redux Cart Functionality — Done and Solid
+Products can be added to cart
+
+Products in cart have quantity field
+
+Items can be removed from cart
+
+Subtotal updates correctly
+
+Cart persists during the session (optional: localStorage)
+
+Cart UI (Cart page) displays clearly
+
+Product Details page correctly integrates with cart logic
+
+🛣️ 2. Routes & Pages
+/ Home: displays all products
+
+/products/:id: shows product details
+
+/cart: shows cart items and totals
+
+/checkout: empty or placeholder for now
+
+✅ You’ve decided: only /checkout will require login
+
+🎯 3. UI/UX Goals
+You’re happy with the basic layout and styling (can be improved later)
+
+“Add to Cart” and “Remove from Cart” buttons work as expected
+
+Users can navigate smoothly between pages
+
+🧠 4. You Understand:
+Why we’re using Supabase (auth, database, user-specific cart/orders)
+
+Supabase will not replace Redux or localStorage, just enhance them
+
+Guest users will use Redux + localStorage; Logged-in users can sync
+
+🛠️ 5. You're Ready to Learn:
+Basic Supabase Auth (signup, login, logout)
+
+How to protect /checkout if user is not logged in
+
+How to store user info or cart in Supabase (later)
+
+<!--  -->
 
 ✅ Day 6: Protect Routes (Auth Placeholder)
 Goal: Set up basic login system (temporary or Firebase optional)

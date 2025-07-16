@@ -18,6 +18,7 @@ export default function Cart() {
               title={item.title}
               price={item.price}
               quantity={item.quantity}
+              id={item.id}
             />
           );
         })}
