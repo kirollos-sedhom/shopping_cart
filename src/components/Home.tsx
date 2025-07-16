@@ -19,6 +19,7 @@ type ClothingItem = {
   price: number;
   description: string;
   title: string;
+  discount: number;
 };
 export default function Home() {
   const [clothes, setClothes] = useState([]);
@@ -57,6 +58,7 @@ export default function Home() {
               key={item.id}
               title={item.title}
               price={item.price}
+              discount={item.discount}
               images={item.images}
               id={item.id}
               description={item.description}

@@ -1,9 +1,21 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeFromCart } from "../../redux/features/cart/cartSlice";
+import {
+  decrementCount,
+  incrementCount,
+  removeFromCart,
+} from "../../redux/features/cart/cartSlice";
 // import {removeFromCart}
 export default function CartItem(props) {
   const dispatch = useDispatch();
+
+  function handleIncrement() {
+    dispatch(incrementCount(props.id));
+  }
+
+  function handleDecrement() {
+    dispatch(decrementCount(props.id));
+  }
   function handleDeleteItem() {
     console.log("deleting item:", props.id);
     dispatch(removeFromCart(props.id));
@@ -14,9 +26,16 @@ export default function CartItem(props) {
       <div>
         <p>{props.title}</p>
         <p>$ {props.price}</p>
-        <p>x{props.quantity}</p>
+        <div>
+          <button onClick={handleDecrement}>decrease</button>
+          <p>x{props.quantity}</p>
 
-        <button onClick={handleDeleteItem}>delete</button>
+          <button onClick={handleIncrement}>increase</button>
+        </div>
+
+        <button className="bg-red-300 p-2" onClick={handleDeleteItem}>
+          delete
+        </button>
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ export default function Cart() {
         })}
       </div>
 
-      <p className="mt-4">total price:{state.subtotal}</p>
+      <p className="mt-4">total price:{state.subtotal.toFixed(2)}</p>
     </div>
   );
 }

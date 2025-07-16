@@ -5,6 +5,7 @@ type Props = {
   id: number;
   images: string[];
   price: number;
+  discount: number;
   description: string;
   title: string;
 };
@@ -14,6 +15,7 @@ export default function Product({
   price,
   title,
   description,
+  discount,
 }: Props) {
   const [displayedImage, setDisplayedImage] = useState(0);
 
@@ -21,7 +23,9 @@ export default function Product({
   //   Math.floor(Math.random() * clothingDescriptions.length)
   // );
 
-  const [discountedPrice] = useState(0.9 * price);
+  const [discountedPrice] = useState(
+    (((100 - discount) / 100) * price).toFixed(2)
+  );
 
   return (
     <Link to={`/products/${id}`}>
