@@ -1,5 +1,6 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { type ProductType } from "../../../components/Product/ProductDetails";
+import type { RootState } from "../../app/store";
 
 type CartItem = ProductType & { quantity: number };
 
@@ -28,20 +29,14 @@ const cartSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, quantity: 1 });
       }
-      state.subtotal = state.items.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
+      state.subtotal = calculateSubtotal(state.items);
       // this should be of type product
     },
 
     removeFromCart: (state, action: PayloadAction<string>) => {
       // the payload is just the id. i don't need more than that
       state.items = state.items.filter((item) => item.id !== action.payload);
-      state.subtotal = state.items.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
+      state.subtotal = calculateSubtotal(state.items);
     },
 
     incrementCount: (state, action: PayloadAction<string>) => {
@@ -52,10 +47,7 @@ const cartSlice = createSlice({
       if (existingItem) {
         existingItem.quantity += 1;
       }
-      state.subtotal = state.items.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
+      state.subtotal = calculateSubtotal(state.items);
     },
     decrementCount: (state, action: PayloadAction<string>) => {
       const existingItem = state.items.find(
@@ -71,14 +63,20 @@ const cartSlice = createSlice({
           );
         }
       }
-      state.subtotal = state.items.reduce(
-        (total, item) => total + item.price * item.quantity,
-        0
-      );
+      state.subtotal = calculateSubtotal(state.items);
     },
   },
 });
 
+function calculateSubtotal(items: CartItem[]) {
+  return items.reduce((total, item) => total + item.price * item.quantity, 0);
+}
+
 export default cartSlice.reducer;
 export const { addToCart, removeFromCart, incrementCount, decrementCount } =
   cartSlice.actions;
+
+export const selectCartItems = (state: RootState) => state.cart.items;
+export const selectCartSubtotal = (state: RootState) => state.cart.subtotal;
+export const selectCartItemCount = (state: RootState) =>
+  state.cart.items.reduce((count, item) => count + item.quantity, 0);

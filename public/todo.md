@@ -61,11 +61,11 @@ Supabase Integration Readiness Checklist
 🧱 1. Redux Cart Functionality — Done and Solid
 Products can be added to cart
 
-Products in cart have quantity field
+Products in cart have quantity field ✅
 
-Items can be removed from cart
+Items can be removed from cart ✅
 
-Subtotal updates correctly
+Subtotal updates correctly ✅
 
 Cart persists during the session (optional: localStorage)
 
@@ -176,3 +176,5 @@ Create login & register pages
 Store logged-in user in Redux (or React Context)
 
 Protect the /cart route
+
+<!-- todo: fix the area of selection on each product card. i can select it by clicking outside the card -->
