@@ -178,3 +178,4 @@ Store logged-in user in Redux (or React Context)
 Protect the /cart route
 
 <!-- todo: fix the area of selection on each product card. i can select it by clicking outside the card -->
+<!-- todo:  refactor local storage for saving state to use redux-persist -->
