@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Cart from "./components/Cart/Cart";
 import Layout from "./components/Layout";
 import ProductDetails from "./components/Product/ProductDetails";
+import Checkout from "./components/Checkout/Checkout";
 
 /*
 todo:
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Route>
       </Routes>
     </BrowserRouter>

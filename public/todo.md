@@ -42,7 +42,7 @@ Create Cart Page — show products in cart ✅✅
 
 Deliverable: Items are added and displayed in cart via Redux state. -->
 
-✅ Day 5: Local Storage + Quantity
+<!-- ✅ Day 5: Local Storage + Quantity
 Goal: Make the cart state persist + add quantity controls.
 
 Use localStorage to persist cart state
@@ -53,50 +53,14 @@ Show total price calculation
 
 Deliverable: Cart behaves like a real cart.
 
-مرحلة انتقالية
+مرحلة انتقالية -->
 
 <!--  -->
 
-Supabase Integration Readiness Checklist
-🧱 1. Redux Cart Functionality — Done and Solid
-Products can be added to cart
-
-Products in cart have quantity field ✅
-
-Items can be removed from cart ✅
-
-Subtotal updates correctly ✅
-
-Cart persists during the session (optional: localStorage)
-
-Cart UI (Cart page) displays clearly
-
-Product Details page correctly integrates with cart logic
-
-🛣️ 2. Routes & Pages
-/ Home: displays all products
-
-/products/:id: shows product details
-
-/cart: shows cart items and totals
-
 /checkout: empty or placeholder for now
-
-✅ You’ve decided: only /checkout will require login
-
-🎯 3. UI/UX Goals
-You’re happy with the basic layout and styling (can be improved later)
-
-“Add to Cart” and “Remove from Cart” buttons work as expected
-
-Users can navigate smoothly between pages
 
 🧠 4. You Understand:
 Why we’re using Supabase (auth, database, user-specific cart/orders)
-
-Supabase will not replace Redux or localStorage, just enhance them
-
-Guest users will use Redux + localStorage; Logged-in users can sync
 
 🛠️ 5. You're Ready to Learn:
 Basic Supabase Auth (signup, login, logout)
