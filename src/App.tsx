@@ -5,6 +5,7 @@ import Cart from "./components/Cart/Cart";
 import Layout from "./components/Layout";
 import ProductDetails from "./components/Product/ProductDetails";
 import Checkout from "./components/Checkout/Checkout";
+import Signup from "./components/auth/Signup";
 
 /*
 todo:
@@ -27,6 +28,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
         </Route>
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );

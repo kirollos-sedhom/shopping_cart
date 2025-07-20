@@ -13,7 +13,9 @@ export default function Navbar() {
         <p>Home</p>
         <p>About</p>
         <p>Shop</p>
-        <p>Contact</p>
+        <Link to={"./signup"}>
+          <p>Signup</p>
+        </Link>
       </div>
 
       <Link to={"./cart"}>Cart: {cartSize}</Link>
