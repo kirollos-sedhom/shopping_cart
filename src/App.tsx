@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import ProductDetails from "./components/Product/ProductDetails";
 import Checkout from "./components/Checkout/Checkout";
 import Signup from "./components/auth/Signup";
+import Login from "./components/auth/Login";
 
 /*
 todo:
@@ -29,6 +30,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Route>
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
-
-import { supabase } from "../../lib/supabaseClient";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
-export default function Signup() {
+import { supabase } from "../../lib/supabaseClient";
+
+export default function Login() {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -19,7 +19,7 @@ export default function Signup() {
   return (
     <div className="flex flex-col items-center gap-4 p-2">
       <h1 className="text-2xl">CarloClub</h1>
-      <p>create an account</p>
+      <p>Login</p>
       <input
         className="border-1 placeholder:p-2"
         placeholder="email"
@@ -37,12 +37,11 @@ export default function Signup() {
         className="border-1 p-2 cursor-pointer hover:bg-slate-200 active:bg-slate-300"
         type="submit"
       >
-        sign up
+        Login
       </button>
       <p>
-        already have an account? <Link to={"/login"}>Login now</Link>
+        don't have an account? <Link to={"/signup"}>Sign up now</Link>
       </p>
-
       {showToast && <div>{toastMessage}</div>}
     </div>
   );
@@ -52,36 +51,27 @@ export default function Signup() {
     const password = passwordRef.current?.value.trim();
     try {
       if (email && password) {
-        const { data, error } = await supabase.auth.signUp({ email, password });
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
 
         if (error) {
-          console.error("signup failed", error.message, error);
-          setToastMessage("signup failed");
+          console.error("login failed", error.message, error);
+          setToastMessage("login failed");
           setShowToast(true);
         } else {
-          console.log("signup successfull", data);
-          setToastMessage("signup successfull");
+          console.log("login successfull", data);
+          setToastMessage("login successfull");
           setShowToast(true);
         }
       }
     } catch (error) {
       if (error instanceof Error) {
         console.log(error.message);
-        setToastMessage("signup failed");
+        setToastMessage("login failed");
         setShowToast(true);
       }
     }
   }
 }
-
-/*
-todo: change toast color based on success/fail 
-
-todo: handle early submission, maybe disable button
-
-todo: add animation, maybe using framer motion
-
-? maybe loading state
-? maybe keyboard accessibility
-
-*/
