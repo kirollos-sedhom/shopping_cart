@@ -8,18 +8,62 @@ import Checkout from "./components/Checkout/Checkout";
 import Signup from "./components/auth/Signup";
 import Login from "./components/auth/Login";
 
-/*
-todo:
-homepage will have a nice navbar at the top, containing two routes. home and cart.
-the home will contain data fetched from API
-the data is just some products. every product in its card. the card should have the product image, name, and add to cart button
-
-* when you visit the cart route, you should see all your cart items, their price, and a remove from cart button
-  on the right there should be the calculated price of all products
-
-*/
+import { supabase } from "./lib/supabaseClient";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser } from "./redux/features/auth/authSlice";
+import { useEffect } from "react";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    async function handleUserSession() {
+      const { data, error } = await supabase.auth.getSession();
+      /*
+        This is an async call that checks if a user is already logged in (based on the token stored in browser storage).
+
+        data.session contains the user info if logged in.
+
+        data.session.user gives you the user object you care about.
+
+      */
+
+      if (data.session?.user) {
+        dispatch(setUser(data.session.user));
+      } else {
+        dispatch(setUser(null));
+      }
+    }
+
+    handleUserSession();
+
+    const { data: authListener } = supabase.auth.onAuthStateChange(() => {
+      handleUserSession();
+    });
+
+    /* 
+      This is object destructuring with renaming.
+
+      You're doing two things at once:
+
+      Extracting the data property from the object
+
+      Giving it a new name: authListener */
+
+    /*
+      This sets up a real-time listener.
+
+      It runs the callback whenever the login/logout status changes.
+
+      You clean it up later to prevent memory leaks.
+
+
+    */
+    return () => {
+      authListener.subscription.unsubscribe();
+    };
+  }, [dispatch]);
+
   return (
     <BrowserRouter>
       <Routes>

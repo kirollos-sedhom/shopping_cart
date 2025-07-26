@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router";
+import { Link, Navigate, replace, useNavigate } from "react-router";
 import { supabase } from "../../lib/supabaseClient";
 
 export default function Login() {
@@ -8,6 +8,8 @@ export default function Login() {
 
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -64,6 +66,8 @@ export default function Login() {
           console.log("login successfull", data);
           setToastMessage("login successfull");
           setShowToast(true);
+
+          navigate("/", { replace: true });
         }
       }
     } catch (error) {
