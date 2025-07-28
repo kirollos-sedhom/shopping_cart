@@ -12,6 +12,7 @@ import { supabase } from "./lib/supabaseClient";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./redux/features/auth/authSlice";
 import { useEffect } from "react";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -71,7 +72,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
+              </ProtectedRoute>
+            }
+          />
         </Route>
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />

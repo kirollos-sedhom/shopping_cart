@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { type ProductType } from "../Product/ProductDetails";
 import Product from "../Product/Product";
 import CartItem from "./CartItem";
+import { Link } from "react-router";
 export default function Cart() {
   const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -25,6 +26,9 @@ export default function Cart() {
       </div>
 
       <p className="mt-4">total price:{state.subtotal.toFixed(2)}</p>
+      <Link to={"/checkout"}>
+        <p>checkout</p>
+      </Link>
     </div>
   );
 }

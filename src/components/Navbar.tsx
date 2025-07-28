@@ -32,7 +32,7 @@ export default function Navbar() {
             </p>
           </>
         ) : (
-          <Link to={"./login"}>
+          <Link to={"/login"}>
             <p>Login</p>
           </Link>
         )}
