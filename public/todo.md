@@ -144,3 +144,4 @@ Protect the /cart route
 <!-- todo: fix the area of selection on each product card. i can select it by clicking outside the card -->
 <!-- todo:  refactor local storage for saving state to use redux-persist -->
 <!-- todo: add on hover for user name to show message, like a small modal or a bubble/cloud, that will allow logout. just like userName in amazon.com  -->
+<!-- todo: fix emailjs logic -->

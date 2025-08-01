@@ -79,6 +79,11 @@ const cartSlice = createSlice({
       state.subtotal = calculateSubtotal(state.items);
       addToLocalStorage(state.items, state.subtotal);
     },
+
+    clearCart: (state) => {
+      state.items = [];
+      state.subtotal = 0;
+    },
   },
 });
 
@@ -92,8 +97,13 @@ function addToLocalStorage(items: CartItem[], subtotal: number) {
 }
 
 export default cartSlice.reducer;
-export const { addToCart, removeFromCart, incrementCount, decrementCount } =
-  cartSlice.actions;
+export const {
+  addToCart,
+  removeFromCart,
+  incrementCount,
+  decrementCount,
+  clearCart,
+} = cartSlice.actions;
 
 export const selectCartItems = (state: RootState) => state.cart.items;
 export const selectCartSubtotal = (state: RootState) => state.cart.subtotal;
