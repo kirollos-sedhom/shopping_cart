@@ -12,6 +12,7 @@ import type { RootState } from "../../redux/app/store";
 import { clearCart } from "../../redux/features/cart/cartSlice";
 import ModalComponent from "../ModalComponent";
 import ToastComponent from "../ToastComponent";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Checkout() {
   const cart = useSelector((state: RootState) => state.cart);
@@ -20,15 +21,15 @@ export default function Checkout() {
 
   const dispatch = useDispatch();
 
-  const [showToast, setShowToast] = useState(true);
+  const [showToast, setShowToast] = useState(false);
   //todo: uncomment
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setShowToast(false);
-  //   }, 2000);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowToast(false);
+    }, 2000);
 
-  //   return () => clearTimeout(timeout);
-  // }, [showToast]);
+    return () => clearTimeout(timeout);
+  }, [showToast]);
   console.log(cart);
   return (
     <>
@@ -105,7 +106,18 @@ export default function Checkout() {
         </div>
       )}
 
-      {showToast && <ToastComponent message="Thanks for your order!" />}
+      <AnimatePresence>
+        {showToast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.3 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.5 }}
+            className="fixed bottom-4 w-full z-50"
+          >
+            <ToastComponent message="Thanks for your order!" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 
