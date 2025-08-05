@@ -2,16 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
+import { supabase } from "../../lib/supabaseClient";
 export type ProductType = {
   id: string;
+  title: string;
   price: number;
   discount: number;
-  category: string;
   description: string;
   detailedDescription: string;
+  category: string;
   images: string[];
   source: string;
-  title: string;
 };
 export default function ProductDetails() {
   const { id } = useParams();
@@ -26,16 +27,20 @@ export default function ProductDetails() {
   console.log("State is:", state);
 
   async function getData() {
-    const url = `http://localhost:4000/products/${id}`;
+    // const url = `http://localhost:4000/products/${id}`;
     try {
       setIsLoading(true);
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`response status ${response.status}`);
+      const { data, error } = await supabase
+        .from("products")
+        .select()
+        .eq("id", id);
+
+      console.log("found product details:", data);
+      if (data) setProductData(data[0]);
+
+      if (error) {
+        throw new Error("can't find product:", error.message);
       }
-      const json = await response.json();
-      console.log("product data:", json);
-      setProductData(json);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);

@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product/Product";
-/*
+import { supabase } from "../lib/supabaseClient";
 
-✅ Day 3: Product Details Page + Routing
-Goal: View product details on a new route.
-
-Use useParams() from React Router to fetch product ID
-
-Show more details (price, description, image, etc.)
-
-"Add to Cart" button
-
-Deliverable: Clicking on a product shows a detailed view.
-*/
 type ClothingItem = {
   id: number;
   images: string[];
@@ -22,27 +11,27 @@ type ClothingItem = {
   discount: number;
 };
 export default function Home() {
-  const [clothes, setClothes] = useState([]);
+  const [clothes, setClothes] = useState<ClothingItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    async function fetchAll() {
-      setIsLoading(true);
-      try {
-        const productRes = await fetch(`http://localhost:4000/products`);
-        const productJson = await productRes.json();
-        console.log(productJson);
-
-        setClothes(productJson);
-      } catch (error) {
-        if (error instanceof Error) setError(error.message);
-      } finally {
-        setIsLoading(false);
+    setIsLoading(true);
+    async function fetchAllProducts() {
+      const { data, error } = await supabase.from("products").select("*");
+      console.log("data is:", data);
+      if (error) {
+        // if (error instanceof Error)
+        throw new Error("failed to fetch data:", error);
       }
+
+      return data;
     }
 
-    fetchAll();
+    fetchAllProducts()
+      .then((data) => setClothes(data))
+      .catch((error) => console.error("error fetching products", error))
+      .finally(() => setIsLoading(false));
   }, []);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8 max-w-screen-xl mx-auto">
