@@ -17,33 +17,45 @@ export default function Signup() {
     return () => clearTimeout(timer);
   }, [showToast]);
   return (
-    <div className="flex flex-col items-center gap-4 p-2">
-      <h1 className="text-2xl">CarloClub</h1>
-      <p>create an account</p>
-      <input
-        className="border-1 placeholder:p-2"
-        placeholder="email"
-        ref={emailRef}
-        type="email"
+    <div className="flex flex-col h-screen bg-[url(/public/images/login_bg5.jpg)] bg-cover bg-center lg:flex-row lg:bg-none">
+      <img
+        src="/public/images/login_bg5.jpg"
+        alt="fashion model"
+        className="h-1/2 opacity-0 lg:opacity-100 lg:h-full lg:w-1/2 lg:object-cover"
       />
-      <input
-        className="border-1 placeholder:p-2"
-        placeholder="password"
-        ref={passwordRef}
-        type="password"
-      />
-      <button
-        onClick={handleSubmit}
-        className="border-1 p-2 cursor-pointer hover:bg-slate-200 active:bg-slate-300"
-        type="submit"
-      >
-        sign up
-      </button>
-      <p>
-        already have an account? <Link to={"/login"}>Login now</Link>
-      </p>
+      <div className="flex flex-col items-center gap-4 p-2 backdrop-blur-sm rounded-md p-8 justify-center items-center w-full h-full lg:bg-red-200">
+        <div className="loginform p-8 flex flex-col gap-4 items-center transition-all duration-500 lg:bg-red-400 lg:rounded-xl lg:gap-8">
+          <h1 className="text-2xl">CarloClub</h1>
+          <p>Create an account</p>
+          <input
+            className="placeholder:p-2 p-1 mt-4 w-64 bg-white rounded-md"
+            placeholder="Email"
+            ref={emailRef}
+            type="email"
+          />
+          <input
+            className="placeholder:p-2 p-1  w-64 bg-white rounded-md"
+            placeholder="password"
+            ref={passwordRef}
+            type="password"
+          />
+          <button
+            onClick={handleSubmit}
+            className="px-8 py-2 bg-white rounded-full cursor-pointer hover:bg-slate-200 active:bg-slate-300"
+            type="submit"
+          >
+            sign up
+          </button>
+          <p>
+            already have an account?{" "}
+            <Link className="font-bold" to={"/login"}>
+              Login now
+            </Link>
+          </p>
+        </div>
 
-      {showToast && <div>{toastMessage}</div>}
+        {showToast && <div>{toastMessage}</div>}
+      </div>
     </div>
   );
 
