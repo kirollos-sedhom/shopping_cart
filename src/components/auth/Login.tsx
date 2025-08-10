@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, Navigate, replace, useNavigate } from "react-router";
 import { supabase } from "../../lib/supabaseClient";
+import { ReusableToast } from "../custom_components/ReusableToast";
 
 export default function Login() {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -58,7 +59,11 @@ export default function Login() {
         </div>
       </div>
 
-      {showToast && <div>{toastMessage}</div>}
+      <ReusableToast
+        showToast={showToast}
+        message={toastMessage}
+        type={"error"}
+      />
     </div>
   );
 
