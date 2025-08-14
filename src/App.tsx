@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "./redux/features/auth/authSlice";
 import { useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
+import AllProducts from "./components/Product/AllProducts";
 
 function App() {
   const dispatch = useDispatch();
@@ -70,6 +71,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<AllProducts />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route

@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/features/cart/cartSlice";
 import { supabase } from "../../lib/supabaseClient";
+import LoadingSpinner from "../custom_components/LoadingSpinner";
 export type ProductType = {
   id: string;
   title: string;
@@ -58,7 +59,7 @@ export default function ProductDetails() {
   function handleAddToCart() {
     if (productData) dispatch(addToCart(productData));
   }
-  if (isLoading) return <p>loading...</p>;
+  if (isLoading) return <LoadingSpinner />;
   if (error) return <p>Error: {error}</p>;
   if (!productData) return <p>Item not found</p>;
   const discountedPrice = productData.price * (1 - productData.discount / 100);

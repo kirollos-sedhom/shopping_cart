@@ -12,6 +12,7 @@ import type { RootState } from "../../redux/app/store";
 import { clearCart } from "../../redux/features/cart/cartSlice";
 import ModalComponent from "../ModalComponent";
 import ToastComponent from "../ToastComponent";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Checkout() {
@@ -31,6 +32,7 @@ export default function Checkout() {
     return () => clearTimeout(timeout);
   }, [showToast]);
   console.log(cart);
+
   return (
     <>
       {cart.items.length ? (
@@ -76,7 +78,7 @@ export default function Checkout() {
                     {item.title} x{item.quantity}
                   </p>
 
-                  <p>{item.price * item.quantity}</p>
+                  <p>{(item.price * item.quantity).toFixed(2)}</p>
                 </div>
               );
             })}

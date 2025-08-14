@@ -16,13 +16,17 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className="p-4 flex justify-between">
+    <div className="p-4 flex justify-between shadow-sm">
       <Link to={"./"}>CarloClub</Link>
 
       <div className="flex gap-2">
-        <p>Home</p>
+        <Link to={"./"}>
+          <p>Home</p>
+        </Link>
 
-        <p>Shop</p>
+        <Link to={"/shop"}>
+          <p>Shop</p>
+        </Link>
 
         {user ? (
           <>

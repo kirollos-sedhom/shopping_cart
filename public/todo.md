@@ -146,3 +146,4 @@ Protect the /cart route
 <!-- todo: add on hover for user name to show message, like a small modal or a bubble/cloud, that will allow logout. just like userName in amazon.com  -->
 <!-- todo: fix emailjs logic -->
 <!-- todo: fix sometimes when you logout exactly after checkout, and log back in. your items are still there in cart -->
+<!-- todo: fix that you can login while already logged in -->
