@@ -20,7 +20,7 @@ export default function Home() {
       <section className="w-full relative">
         <img
           className="w-full h-[60vh] object-cover md:h-[80vh] rounded-lg"
-          src="/images/login_bg6.jpg"
+          src="/images/login_bg9.jpg"
           alt="hero image"
         />
 
@@ -41,7 +41,7 @@ export default function Home() {
         <p>featured items here</p>
       </section> */}
       <section className="Quote my-10">
-        <h2 className="font-festina text-2xl my-8 text-center max-w-8/10 md:max-w-1/2 mx-auto">
+        <h2 className="font-Libertinus text-2xl my-8 text-center max-w-8/10 md:max-w-1/2 mx-auto">
           Our Purpose is to inspire a better way of living by creating conscious
           products that last through time.
         </h2>

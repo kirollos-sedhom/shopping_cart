@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Navigate, replace, useNavigate } from "react-router";
 import { selectCartItemCount } from "../redux/features/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,8 +11,8 @@ export default function Navbar() {
   const userEmail = user?.email;
   const userName = userEmail?.substring(0, userEmail.indexOf("@"));
 
+  const [showLogout, setShowLogout] = useState(false);
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
   return (
@@ -29,12 +29,26 @@ export default function Navbar() {
         </Link>
 
         {user ? (
-          <>
-            <p>{userName}</p>{" "}
+          <div className="relative flex gap-2 border-2">
+            <p
+              onMouseEnter={() => setShowLogout(true)}
+              onMouseLeave={() => setShowLogout(false)}
+            >
+              {userName}
+            </p>{" "}
+            {showLogout && (
+              <p
+                className="bg-green-500 absolute top-5 left-auto right-auto backdrop-opacity-50"
+                onMouseEnter={() => setShowLogout(true)}
+                onMouseLeave={() => setShowLogout(false)}
+              >
+                want to log out?
+              </p>
+            )}
             <p className="cursor-pointer" onClick={handleLogout}>
               Logout
             </p>
-          </>
+          </div>
         ) : (
           <Link to={"/login"}>
             <p>Login</p>
