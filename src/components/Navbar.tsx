@@ -29,22 +29,20 @@ export default function Navbar() {
         </Link>
 
         {user ? (
-          <div className="relative flex gap-2 border-2">
-            <p
-              onMouseEnter={() => setShowLogout(true)}
-              onMouseLeave={() => setShowLogout(false)}
-            >
+          <div className="relative flex gap-2">
+            <p className="group relative inline-block duration-300">
               {userName}
-            </p>{" "}
-            {showLogout && (
-              <p
-                className="bg-green-500 absolute top-5 left-auto right-auto backdrop-opacity-50"
-                onMouseEnter={() => setShowLogout(true)}
-                onMouseLeave={() => setShowLogout(false)}
+
+              <span
+                className="absolute hidden group-hover:flex left-1/2 top-full mt-2 z-20 -translate-x-1/2 w-48 px-3 py-2 bg-gray-700 rounded-lg text-center text-white text-sm
+    after:content-[''] after:absolute after:left-1/2 after:bottom-full after:-translate-x-1/2 after:border-8 after:border-x-transparent after:border-t-transparent after:border-b-gray-700 cursor-pointer"
+                onClick={handleLogout}
               >
-                want to log out?
-              </p>
-            )}
+                Do you want to logout?
+              </span>
+              <div className="hidden group-hover:block fixed inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            </p>
+
             <p className="cursor-pointer" onClick={handleLogout}>
               Logout
             </p>
