@@ -17,13 +17,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Checkout() {
   const cart = useSelector((state: RootState) => state.cart);
-
   const formRef = useRef<HTMLFormElement>(null);
-
+  const [userEmail, setUserEmail] = useState("");
   const dispatch = useDispatch();
-
   const [showToast, setShowToast] = useState(false);
-  //todo: uncomment
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setShowToast(false);
@@ -49,6 +47,8 @@ export default function Checkout() {
               type="email"
               id="email"
               name="to_email"
+              value={userEmail}
+              onChange={(val) => setUserEmail(val.target.value)}
               placeholder="example@mail.com"
               className="border-1 rounded-md p-1"
             />
@@ -124,9 +124,33 @@ export default function Checkout() {
   );
 
   function handleOrderPlaced(e: React.FormEvent) {
-    // todo (not now): fix emailjs logic
+    // todo : fix emailjs logic
+    e.preventDefault();
     dispatch(clearCart());
     setShowToast(true);
+    console.log("user email", userEmail);
+    const params = {
+      subject: "CarloCart Receipt",
+      customer: "customer name",
+      to_email: userEmail,
+      name: "CarloCart",
+      email: userEmail,
+    };
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        params,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log("email sent", response.status, response.text);
+        },
+        (error) => {
+          console.log("failed", error);
+        }
+      );
     // e.preventDefault();
     // if (!formRef.current) return;
     // emailjs
