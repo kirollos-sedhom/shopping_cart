@@ -131,9 +131,9 @@ export default function Checkout() {
     console.log("user email", userEmail);
     const params = {
       subject: "CarloCart Receipt",
-      customer: "customer name",
+      to_name: "customer",
       to_email: userEmail,
-      name: "CarloCart",
+      from_name: "CarloCart",
       email: userEmail,
     };
     emailjs
