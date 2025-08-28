@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link, Navigate, replace, useNavigate } from "react-router";
 import { supabase } from "../../lib/supabaseClient";
 import { ReusableToast } from "../custom_components/ReusableToast";
+import { useSelector } from "react-redux";
 
 export default function Login() {
   const emailRef = useRef<HTMLInputElement>(null);
@@ -12,6 +13,8 @@ export default function Login() {
 
   const navigate = useNavigate();
 
+  const user = useSelector((state) => state.auth.user);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowToast(false);
@@ -19,7 +22,9 @@ export default function Login() {
 
     return () => clearTimeout(timer);
   }, [showToast]);
-  return (
+  return user ? (
+    <Navigate to={"/"} replace={true} />
+  ) : (
     <div className="h-screen bg-[url(/public/images/login_bg7.jpg)] bg-cover bg-center lg:bg-none flex flex-col lg:flex-row">
       {/*  */}
       {/* <img src="/public/images/login_bg7.jpg" className="hidden lg:block" /> */}

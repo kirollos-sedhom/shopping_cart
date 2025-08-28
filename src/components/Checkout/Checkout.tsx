@@ -1,16 +1,11 @@
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  type MouseEventHandler,
-} from "react";
-import type { MouseEvent } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
 import emailjs from "emailjs-com";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import type { RootState } from "../../redux/app/store";
 import { clearCart } from "../../redux/features/cart/cartSlice";
-import ModalComponent from "../ModalComponent";
+
 import ToastComponent from "../ToastComponent";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -124,7 +119,6 @@ export default function Checkout() {
   );
 
   function handleOrderPlaced(e: React.FormEvent) {
-    // todo : fix emailjs logic
     e.preventDefault();
     dispatch(clearCart());
     setShowToast(true);
@@ -151,20 +145,5 @@ export default function Checkout() {
           console.log("failed", error);
         }
       );
-    // e.preventDefault();
-    // if (!formRef.current) return;
-    // emailjs
-    //   .sendForm(
-    //     import.meta.env.VITE_EMAILJS_SERVICE_ID,
-    //     import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-    //     formRef.current,
-    //     import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-    //   )
-    //   .then(() => {
-    //     console.log("email sent");
-    //   })
-    //   .catch((error) => {
-    //     console.log("email not sent", error);
-    //   });
   }
 }
