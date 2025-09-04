@@ -14,6 +14,9 @@ import { setUser } from "./redux/features/auth/authSlice";
 import { useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AllProducts from "./components/Product/AllProducts";
+import { setIsAdmin } from "./redux/features/auth/authSlice";
+import AdminRoute from "./components/AdminRoute";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,9 +34,17 @@ function App() {
       */
 
       if (data.session?.user) {
+        const { data: profile, error: pErr } = await supabase
+          .from("profiles")
+          .select("is_admin")
+          .eq("id", data.session.user.id)
+          .single();
+
         dispatch(setUser(data.session.user));
+        dispatch(setIsAdmin(profile?.is_admin ?? false));
       } else {
         dispatch(setUser(null));
+        dispatch(setIsAdmin(null));
       }
     }
 
@@ -83,6 +94,14 @@ function App() {
             }
           />
         </Route>
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

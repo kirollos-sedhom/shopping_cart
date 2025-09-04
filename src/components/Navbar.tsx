@@ -8,6 +8,7 @@ import { logOut } from "../redux/features/auth/authSlice";
 export default function Navbar() {
   const cartSize = useSelector(selectCartItemCount);
   const user = useSelector((state: RootState) => state.auth.user);
+  const isAdmin = useSelector((s: RootState) => s.auth.isAdmin);
   const userEmail = user?.email;
   const userName = userEmail?.substring(0, userEmail.indexOf("@"));
 
@@ -42,6 +43,7 @@ export default function Navbar() {
               </span>
               <div className="hidden group-hover:block fixed inset-0 bg-black/40 z-10 pointer-events-none"></div>
             </p>
+            {isAdmin ? <Link to="/admin">Admin</Link> : null}
 
             <p className="cursor-pointer" onClick={handleLogout}>
               Logout
