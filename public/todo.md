@@ -147,4 +147,4 @@ Protect the /cart route
 <!-- todo: ✅fix sometimes when you logout exactly after checkout, and log back in. your items are still there in cart -->
 <!-- todo: ✅fix that you can login while already logged in -->
 <!-- todo: ⚒️add admin page to upload products and manage site -->
-<!-- todo: the cart stays even if i log out -->
+<!-- todo: the cart stays even if i log out, logging in with a different account allows me to see the cart of the previous user -->
